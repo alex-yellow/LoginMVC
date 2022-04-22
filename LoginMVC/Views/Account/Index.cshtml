@@ -1,0 +1,32 @@
+﻿@{
+    Layout = null;
+}
+@model LoginMVC.Models.Account
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Главная</title>
+</head>
+<body>
+    @using (Html.BeginForm("Login", "Account"))
+    {
+    @ViewBag.Error
+    <table cellpadding="2" cellspacing="2">
+        <tr>
+            <td>@Html.LabelFor(model=>model.Username)</td>
+            <td>@Html.TextBoxFor(model => model.Username)</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(model => model.Password)</td>
+            <td>@Html.TextBoxFor(model => model.Password)</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td><input type="submit" value="Войти" /></td>
+        </tr>
+    </table>
+    }
+</body>
+</html>
